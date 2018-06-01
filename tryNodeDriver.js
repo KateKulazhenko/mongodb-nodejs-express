@@ -1,7 +1,7 @@
 const MongoClient = require('mongodb').MongoClient,
     assert = require('assert');
 
-MongoClient.connect('mongodb://localfost:21017/video', function (err, db) {
+MongoClient.connect('mongodb://localhost:21017/', function (err, db) {
   assert.equal(null, err);
   console.log('Successfull connected to server');
 
