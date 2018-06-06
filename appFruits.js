@@ -1,4 +1,4 @@
-var express = require('express'),
+const express = require('express'),
     app = express(),
     engines = require('consolidate'),
     bodyParser = require('body-parser');
@@ -19,7 +19,7 @@ app.get('/', function(req, res, next) {
 });
 
 app.post('/favorite_fruit', function(req, res, next) {
-    var favorite = req.body.fruit;
+    const favorite = req.body.fruit;
     if (typeof favorite == 'undefined') {
         next('Please choose a fruit!');
     }
@@ -30,7 +30,7 @@ app.post('/favorite_fruit', function(req, res, next) {
 
 app.use(errorHandler);
 
-var server = app.listen(3000, function() {
-    var port = server.address().port;
+const server = app.listen(3000, function() {
+    const port = server.address().port;
     console.log('Express server listening on port %s.', port);
 });
